@@ -1,21 +1,39 @@
-import Head from 'next/head'
+import Head from "next/head";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Tile from "../components/Tile";
+import NewUser from "../components/screen/NewUser";
+import MakeTransaction from "../components/screen/MakeTransaction";
+import TransactionHistory from "../components/screen/TransactionHistory";
+import Nav from "../components/screen/Nav";
+
+import { Row, Col, Container } from "react-bootstrap";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
         <title>Frontend Boilerplate React</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"
+        />
       </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <Hero />
-        <Tile />
-      </main>
-      <Footer />
+      <Container fluid>
+        <Nav />
+        <Container className="text-center">
+          <NewUser />
+          <Row className="mt-4">
+            <Col lg={6}>
+              <MakeTransaction className="text-center" />
+            </Col>
+            <Col lg={6}>
+              <TransactionHistory className="text-center" />
+            </Col>
+          </Row>
+        </Container>
+      </Container>
     </div>
-  )
+  );
 }

@@ -11,6 +11,11 @@
     "test": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^12.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react-bootstrap": "^2.7.0",
+    "redux": "^4.2.0"
   }
 }
