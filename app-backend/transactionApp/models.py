@@ -6,13 +6,7 @@ from django.contrib.auth.models import User
 
 class Client(models.Model):
     amount = models.DecimalField(
-        max_digits=10, decimal_places=2, null=True, blank=True, default=0)
-    clientId = models.CharField(
-        primary_key=True, default=uuid.uuid4, editable=False, max_length=10)
-
-    def __str__(self):
-
-        return self.clientId
+        max_digits=10, decimal_places=2, null=True, blank=True, default=100)
 
 
 class TransactionHistory(models.Model):
